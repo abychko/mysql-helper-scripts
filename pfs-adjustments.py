@@ -41,7 +41,7 @@ def gen_cnf_file(ifile=None, ofile=None):
 	if args.verbose:
 		print(f"MySQL cnf filename: {outfile_name}")
 
-	ofile.write("performance_schema_instrument = '%=OFF'")
+	ofile.write("performance_schema_instrument = '%=OFF'" + linesep)
 
 	for line in ifile:
 		if not '/' in line:

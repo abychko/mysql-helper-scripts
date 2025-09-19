@@ -41,22 +41,18 @@ def gen_cnf_file(ifile=None, ofile=None):
 	if args.verbose:
 		print(f"MySQL cnf filename: {outfile_name}")
 
-	for line in ifile:
+	ofile.write("performance_schema_instrument = '%=OFF'")
 
+	for line in ifile:
 		if not '/' in line:
 			continue
 		name, enabled, _ = line.rstrip().split(',')
 
 		if enabled == "YES":
-			_enabled = "ON"
-		else:
-			_enabled = "OFF"
+			cnf_line = f"performance_schema_instrument = '{name}=ON'"
+			lines.append(cnf_line)
 
-		cnf_line = f"performance_schema_instrument = '{name}={_enabled}'"
-
-		lines.append(cnf_line)
-
-	for line in lines:
+	for line in sorted(lines):
 		if(args.verbose):
 			print(line)
 		ofile.write(line + linesep)

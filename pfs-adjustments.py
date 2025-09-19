@@ -65,27 +65,28 @@ def open_outfile(name=None):
 		print(f"==>> Unable to open file: {outfile_name}!")
 		print(f"{err}")
 	return f
-
+#
+def create_outfile(name=None):
+	outfile = open_outfile(name)
+	gen_cnf_file(infile, outfile)
+#
 try:
 	infile = open(args.filename, 'r')
 except Exception as err:
 	print(f"==>> Wrong file or file path: {args.filename}!")
 	print(f"{err}")
 	exit(1)
-
+#
 if args.verbose:
 	print(f"CSV filename: {args.filename}")
-
+#
 if args.output_format == 'sql':
 	outfile_name = args.filename.replace('.csv', '.sql')
-	outfile = open_outfile(outfile_name)
-	gen_sql_file(infile, outfile)
-
+#
 if args.output_format == 'cnf':
 	outfile_name = "perfschema.cnf"
-	outfile = open_outfile(outfile_name)
-	gen_cnf_file(infile, outfile)
-
+#
+create_outfile(outfile_name)
 
 
 

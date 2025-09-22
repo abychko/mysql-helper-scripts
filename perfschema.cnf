@@ -1,8 +1,9 @@
 #
-## PFS Adjuster 2025-09-19 16:43:13
+## PFS Adjuster 2025-09-22 14:39:28
 #
 [mysqld]
 performance_schema_instrument = '%=OFF'
+performance_schema_instrument = 'idle=ON'
 performance_schema_instrument = 'memory/performance_schema/accounts=ON'
 performance_schema_instrument = 'memory/performance_schema/cond_class=ON'
 performance_schema_instrument = 'memory/performance_schema/cond_instances=ON'
@@ -221,6 +222,7 @@ performance_schema_instrument = 'statement/sql/xa_prepare=ON'
 performance_schema_instrument = 'statement/sql/xa_recover=ON'
 performance_schema_instrument = 'statement/sql/xa_rollback=ON'
 performance_schema_instrument = 'statement/sql/xa_start=ON'
+performance_schema_instrument = 'transaction=ON'
 performance_schema_instrument = 'wait/io/file/archive/FRM=ON'
 performance_schema_instrument = 'wait/io/file/archive/data=ON'
 performance_schema_instrument = 'wait/io/file/archive/metadata=ON'

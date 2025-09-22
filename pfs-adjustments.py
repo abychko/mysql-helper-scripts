@@ -21,20 +21,18 @@ lines = []
 #
 def create_cnf_file(infile=None, outfile=None):
 	for line in infile:
-		if not '/' in line:
-			continue
-
 		name, enabled, _ = line.rstrip().split(',')
-
+		if name == 'NAME':
+			continue
 		if enabled == "YES":
 			cnf_line = f"performance_schema_instrument = '{name}=ON'"
 			lines.append(cnf_line)
 #
 def create_sql_file(infile=None, outFile=None):
 	for line in infile:
-		if not '/' in line:
-			continue
 		name, enabled, timed = line.rstrip().split(',')
+		if name == 'NAME':
+			continue
 		sql_line = (f"UPDATE performance_schema.setup_instruments "
 				f"SET ENABLED = '{enabled}', TIMED = '{timed}' "
 				f"WHERE NAME = '{name}';")

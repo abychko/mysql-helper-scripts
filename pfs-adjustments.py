@@ -19,81 +19,65 @@ args = parser.parse_args()
 #
 lines = []
 #
-def create_cnf_file(infile=None, outfile=None):
-	for line in infile:
-		name, enabled, _ = line.rstrip().split(',')
-		if name == 'NAME':
-			continue
+def get_cf_line(name=None, enabled=None, timed=None) -> str:
+	cnf_line = None
+
+	if args.format == 'cnf':
 		if enabled == "YES":
 			cnf_line = f"performance_schema_instrument = '{name}=ON'"
-			lines.append(cnf_line)
-#
-def create_sql_file(infile=None, outFile=None):
-	for line in infile:
-		name, enabled, timed = line.rstrip().split(',')
-		if name == 'NAME':
-			continue
-		sql_line = (f"UPDATE performance_schema.setup_instruments "
-				f"SET ENABLED = '{enabled}', TIMED = '{timed}' "
-				f"WHERE NAME = '{name}';")
-		lines.append(sql_line)
-#
-def create_outfile():
-	now = datetime.now()
-	date_time = now.strftime("%Y-%m-%d %H:%M:%S")
 
-	o_filename = "perfschema." + args.format
-	print(f"=> Creating outfile: {o_filename}")
-# open file
-	try:
-		infile = open(args.infile, 'r')
-	except Exception as err:
-		print(f"==>> Wrong file or file path: {args.infile}!")
-		print(f"{err}")
-		exit(1)
-#
-	try:
-		outfile = open(o_filename, 'w')
-	except Exception as err:
-		print(f"==>> Unable to open outfile: {o_filename}!")
-		print(f"{err}")
-#
-	if args.verbose:
-		print(f"=> CSV filename: {args.infile}")
-		print(f"=> Output format is {args.format.upper()}")
-		print(f"=> Outfile is {o_filename}")
-#
 	if args.format == 'sql':
-		lines.append("--" + linesep + "-- PFS Adjuster " +
-			date_time + linesep + "--")
-		create_sql_file(infile, outfile)
+		cnf_line = (f"UPDATE performance_schema.setup_instruments "
+					f"SET ENABLED = '{enabled}', TIMED = '{timed}' "
+					f"WHERE NAME = '{name}';")
+
+	return cnf_line
 #
-	if args.format == 'cnf':
-		lines.append("#" + linesep + "## PFS Adjuster " + date_time +
-			linesep + "#" + linesep + "[mysqld]")
-		lines.append("performance_schema_instrument = '%=OFF'")
-		create_cnf_file(infile, outfile)
+now = datetime.now()
+date_time = now.strftime("%Y-%m-%d %H:%M:%S")
+
+o_filename = "perfschema." + args.format
+# open file
+try:
+	infile = open(args.infile, 'r')
+except Exception as err:
+	print(f"==>> Wrong file or file path: {args.infile}!")
+	print(f"{err}")
+	exit(1)
 #
-	for line in sorted(lines):
-		if(args.verbose):
-			print(line)
-		outfile.write(line + linesep)
+try:
+	outfile = open(o_filename, 'w')
+except Exception as err:
+	print(f"==>> Unable to open outfile: {o_filename}!")
+	print(f"{err}")
 #
+if args.verbose:
+	print(f"=> CSV filename: {args.infile}")
+	print(f"=> Output format is {args.format.upper()}")
+	print(f"=> Outfile is {o_filename}")
 #
-create_outfile()
 
+if args.format == 'sql':
+	lines.append("--" + linesep + "-- PFS Adjuster " +
+		date_time + linesep + "--")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#
+if args.format == 'cnf':
+	lines.append("#" + linesep + "## PFS Adjuster " + date_time +
+								linesep + "#" + linesep + "[mysqld]")
+	lines.append("performance_schema_instrument = '%=OFF'")
+#
+for line in infile:
+	name, enabled, timed = line.rstrip().split(',')
+	if name == 'NAME':
+		continue
+	res = get_cf_line(name, enabled, timed)
+	if res != None:
+		lines.append(res)
+#
+for line in lines:
+	if args.verbose:
+		print(line)
+	outfile.write(line + linesep)
+#
 

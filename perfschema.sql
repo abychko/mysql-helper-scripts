@@ -1,5 +1,5 @@
 --
--- PFS Adjuster 2025-09-29 11:59:15
+-- PFS Adjuster 2025-10-21 17:21:57
 --
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'YES' WHERE NAME = 'idle';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/archive/FRM';
@@ -160,12 +160,12 @@ UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHE
 UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/partition/ha_partition::engine_array';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/partition/ha_partition::file';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/partition/ha_partition::part_ids';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/accounts';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/accounts';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/cond_class';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/cond_instances';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_history_long';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_history';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_summary_by_account_by_event_name';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_summary_by_account_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_summary_by_host_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_summary_by_thread_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_stages_summary_by_user_by_event_name';
@@ -179,7 +179,7 @@ UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WH
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_history';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_history.sqltext';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_history.tokens';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_by_account_by_event_name';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_by_account_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_by_digest';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_by_digest.tokens';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_by_host_by_event_name';
@@ -189,13 +189,13 @@ UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WH
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_statements_summary_global_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_history_long';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_history';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_summary_by_account_by_event_name';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_summary_by_account_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_summary_by_host_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_summary_by_thread_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_transactions_summary_by_user_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_history_long';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_history';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_summary_by_account_by_event_name';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_summary_by_account_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_summary_by_host_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_summary_by_thread_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/events_waits_summary_by_user_by_event_name';
@@ -204,12 +204,12 @@ UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WH
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/file_instances';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/hosts';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_class';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_by_account_by_event_name';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_by_account_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_by_host_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_by_thread_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_by_user_by_event_name';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/memory_summary_global_by_event_name';
-UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/metadata_locks';
+UPDATE performance_schema.setup_instruments SET ENABLED = 'NO', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/metadata_locks';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/mutex_class';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/mutex_instances';
 UPDATE performance_schema.setup_instruments SET ENABLED = 'YES', TIMED = 'NO' WHERE NAME = 'memory/performance_schema/prepared_statements_instances';

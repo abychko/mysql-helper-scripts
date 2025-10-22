@@ -161,65 +161,65 @@ memory/partition/ha_partition::part_ids,NO,NO
 memory/performance_schema/accounts,NO,NO
 memory/performance_schema/cond_class,YES,NO
 memory/performance_schema/cond_instances,YES,NO
-memory/performance_schema/events_stages_history_long,YES,NO
-memory/performance_schema/events_stages_history,YES,NO
+memory/performance_schema/events_stages_history_long,NO,NO
+memory/performance_schema/events_stages_history,NO,NO
 memory/performance_schema/events_stages_summary_by_account_by_event_name,NO,NO
-memory/performance_schema/events_stages_summary_by_host_by_event_name,YES,NO
-memory/performance_schema/events_stages_summary_by_thread_by_event_name,YES,NO
-memory/performance_schema/events_stages_summary_by_user_by_event_name,YES,NO
-memory/performance_schema/events_stages_summary_global_by_event_name,YES,NO
+memory/performance_schema/events_stages_summary_by_host_by_event_name,NO,NO
+memory/performance_schema/events_stages_summary_by_thread_by_event_name,NO,NO
+memory/performance_schema/events_stages_summary_by_user_by_event_name,NO,NO
+memory/performance_schema/events_stages_summary_global_by_event_name,NO,NO
 memory/performance_schema/events_statements_current,YES,NO
 memory/performance_schema/events_statements_current.sqltext,YES,NO
 memory/performance_schema/events_statements_current.tokens,YES,NO
-memory/performance_schema/events_statements_history_long,YES,NO
-memory/performance_schema/events_statements_history_long.sqltext,YES,NO
-memory/performance_schema/events_statements_history_long.tokens,YES,NO
+memory/performance_schema/events_statements_history_long,NO,NO
+memory/performance_schema/events_statements_history_long.sqltext,NO,NO
+memory/performance_schema/events_statements_history_long.tokens,NO,NO
 memory/performance_schema/events_statements_history,YES,NO
 memory/performance_schema/events_statements_history.sqltext,YES,NO
 memory/performance_schema/events_statements_history.tokens,YES,NO
 memory/performance_schema/events_statements_summary_by_account_by_event_name,NO,NO
 memory/performance_schema/events_statements_summary_by_digest,YES,NO
 memory/performance_schema/events_statements_summary_by_digest.tokens,YES,NO
-memory/performance_schema/events_statements_summary_by_host_by_event_name,YES,NO
+memory/performance_schema/events_statements_summary_by_host_by_event_name,NO,NO
 memory/performance_schema/events_statements_summary_by_program,YES,NO
-memory/performance_schema/events_statements_summary_by_thread_by_event_name,YES,NO
-memory/performance_schema/events_statements_summary_by_user_by_event_name,YES,NO
+memory/performance_schema/events_statements_summary_by_thread_by_event_name,NO,NO
+memory/performance_schema/events_statements_summary_by_user_by_event_name,NO,NO
 memory/performance_schema/events_statements_summary_global_by_event_name,YES,NO
-memory/performance_schema/events_transactions_history_long,YES,NO
-memory/performance_schema/events_transactions_history,YES,NO
+memory/performance_schema/events_transactions_history_long,NO,NO
+memory/performance_schema/events_transactions_history,NO,NO
 memory/performance_schema/events_transactions_summary_by_account_by_event_name,NO,NO
-memory/performance_schema/events_transactions_summary_by_host_by_event_name,YES,NO
-memory/performance_schema/events_transactions_summary_by_thread_by_event_name,YES,NO
-memory/performance_schema/events_transactions_summary_by_user_by_event_name,YES,NO
-memory/performance_schema/events_waits_history_long,YES,NO
+memory/performance_schema/events_transactions_summary_by_host_by_event_name,NO,NO
+memory/performance_schema/events_transactions_summary_by_thread_by_event_name,NO,NO
+memory/performance_schema/events_transactions_summary_by_user_by_event_name,NO,NO
+memory/performance_schema/events_waits_history_long,NO,NO
 memory/performance_schema/events_waits_history,YES,NO
 memory/performance_schema/events_waits_summary_by_account_by_event_name,NO,NO
-memory/performance_schema/events_waits_summary_by_host_by_event_name,YES,NO
-memory/performance_schema/events_waits_summary_by_thread_by_event_name,YES,NO
-memory/performance_schema/events_waits_summary_by_user_by_event_name,YES,NO
+memory/performance_schema/events_waits_summary_by_host_by_event_name,NO,NO
+memory/performance_schema/events_waits_summary_by_thread_by_event_name,NO,NO
+memory/performance_schema/events_waits_summary_by_user_by_event_name,NO,NO
 memory/performance_schema/file_class,YES,NO
 memory/performance_schema/file_handle,YES,NO
 memory/performance_schema/file_instances,YES,NO
 memory/performance_schema/hosts,YES,NO
 memory/performance_schema/memory_class,YES,NO
 memory/performance_schema/memory_summary_by_account_by_event_name,NO,NO
-memory/performance_schema/memory_summary_by_host_by_event_name,YES,NO
-memory/performance_schema/memory_summary_by_thread_by_event_name,YES,NO
-memory/performance_schema/memory_summary_by_user_by_event_name,YES,NO
+memory/performance_schema/memory_summary_by_host_by_event_name,NO,NO
+memory/performance_schema/memory_summary_by_thread_by_event_name,NO,NO
+memory/performance_schema/memory_summary_by_user_by_event_name,NO,NO
 memory/performance_schema/memory_summary_global_by_event_name,YES,NO
 memory/performance_schema/metadata_locks,NO,NO
 memory/performance_schema/mutex_class,YES,NO
 memory/performance_schema/mutex_instances,YES,NO
 memory/performance_schema/prepared_statements_instances,YES,NO
-memory/performance_schema/rwlock_class,YES,NO
-memory/performance_schema/rwlock_instances,YES,NO
+memory/performance_schema/rwlock_class,NO,NO
+memory/performance_schema/rwlock_instances,NO,NO
 memory/performance_schema/scalable_buffer,YES,NO
 memory/performance_schema/session_connect_attrs,YES,NO
 memory/performance_schema/setup_actors,YES,NO
 memory/performance_schema/setup_objects,YES,NO
 memory/performance_schema/socket_class,YES,NO
 memory/performance_schema/socket_instances,YES,NO
-memory/performance_schema/stage_class,YES,NO
+memory/performance_schema/stage_class,NO,NO
 memory/performance_schema/statement_class,YES,NO
 memory/performance_schema/table_handles,YES,NO
 memory/performance_schema/table_io_waits_summary_by_index_usage,YES,NO
@@ -391,14 +391,14 @@ memory/vio/proxy_networks,NO,NO
 memory/vio/read_buffer,NO,NO
 memory/vio/ssl_fd,NO,NO
 memory/vio/vio,NO,NO
-stage/innodb/alter table (end),YES,YES
-stage/innodb/alter table (flush),YES,YES
-stage/innodb/alter table (insert),YES,YES
-stage/innodb/alter table (log apply index),YES,YES
-stage/innodb/alter table (log apply table),YES,YES
-stage/innodb/alter table (merge sort),YES,YES
-stage/innodb/alter table (read PK and internal sort),YES,YES
-stage/innodb/buffer pool load,YES,YES
+stage/innodb/alter table (end),NO,NO
+stage/innodb/alter table (flush),NO,NO
+stage/innodb/alter table (insert),NO,NO
+stage/innodb/alter table (log apply index),NO,NO
+stage/innodb/alter table (log apply table),NO,NO
+stage/innodb/alter table (merge sort),NO,NO
+stage/innodb/alter table (read PK and internal sort),NO,NO
+stage/innodb/buffer pool load,NO,NO
 stage/mysys/Waiting for table level lock,NO,NO
 stage/sql/After create,NO,NO
 stage/sql/allocating local table,NO,NO
@@ -414,7 +414,7 @@ stage/sql/committing alter table to storage engine,NO,NO
 stage/sql/Compressing gtid_executed table,NO,NO
 stage/sql/Connecting to master,NO,NO
 stage/sql/converting HEAP to ondisk,NO,NO
-stage/sql/copy to tmp table,YES,YES
+stage/sql/copy to tmp table,NO,NO
 stage/sql/Copying to group table,NO,NO
 stage/sql/Copying to tmp table,NO,NO
 stage/sql/Creating sort index,NO,NO
